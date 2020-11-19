@@ -1,0 +1,34 @@
+ul {
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0 0 auto;
+  padding-inline-start: 0;
+}
+
+#forecasting {
+  font-size: 26px;
+}
+
+li {
+  padding: 0 auto;
+}
+
+span {
+  font-size: 22px;
+}
+.card {
+  background-color: #00e1ff8a;
+}
+
+#dateNow {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+#cityNow {
+  font-size: 25px;
+}

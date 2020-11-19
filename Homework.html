@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Homework2</title>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link href="src/style.css" rel="stylesheet" type="text/css">
+
+  </head>
+  <body>
+  <div class="container">      
+   <div class="card">
+   <div class="card-body">
+
+    <div class="row" >
+      <div class="col-6">
+       <form id="lookforcity">
+         <input
+          type="text"
+          placeholder="Type a city"
+          class="form-group"
+          id="citySearch" />
+
+          <input type="submit" 
+          placeholder="🔍" 
+          class="form-group" 
+          id="Search" />
+
+          <button id="currLoc"> Current Location </button>
+       </form>
+     </div>
+    </div>
+
+
+    <div class="row" id="lastSearch">
+
+      <div class="col-3" id="city1">
+         <h3>
+         Heidelberg
+         </h3>
+      </div>
+
+     <div class="col-3" id="city2">
+         <h3>
+         Bogotá
+         </h3>
+     </div>
+           
+    </div>
+    
+		<div class="row" >
+	  	<div class="col-6" id="left-card">	
+       <div class="card">
+       <div class="card-body">
+
+			<div class="row" id="currentcity">
+				<div class="col-6" id="city">	
+          <h1>
+           <span id="cityNow">
+          Berlin
+           </span>     
+          <span id="temp">21°C</span>
+       </h1>
+       </div>
+        
+				<div class="col-6" id="estatus">
+					<h2>
+					Partly cloudly
+					</h2>
+        </div>  
+      </div>
+
+      <div class="row" id="currentStatus">
+        <div class="col-6" id="city">
+         <h1 id="emojihoy">
+          ⛅ 
+         <small> <a href="" id="celcius">°C</a> / <a href="" id="fAH">°F</a></small>
+         </h1>
+        </div>
+
+        <div class="col-6" id="weather">
+          <p id="dateNow"> 
+           04/10 
+           <br> 
+           sunday 
+           <br> 
+           24°/18°
+          </p>
+        </div>
+      </div>
+
+      <hr/>
+
+     <Main>
+     <div class="row" id="timeWeather">
+
+      <div class="col-6">
+        <div class="card">
+        <div class="card-body">
+         <ul id="hours-weather">
+          <li>
+          Now   🌤  21°
+          </li>
+          <li>
+          9 pm  🌤  18° 
+          </li>
+          <li>
+          11 pm 🌙  18°
+          </li>
+          <li>
+          1 am  🌙  15° 
+          </li>
+          <li>
+          3 am  🌙  15° 
+          </li>
+          <li>
+          5 am  ☁  15° 
+         </li>
+        </ul>
+        </div>
+        </div>
+     </div>
+
+     <div class="col-6">
+       <div class="card">
+       <div class="card-body">
+       <ul id="hours-weather">
+        <Li>
+         7 am ☁ 18°
+        </Li>
+        <Li>
+         9 am 🌤 18° 
+        </Li>
+        <Li>
+         11 am 🌤 20° 
+        </Li>
+        <Li>
+         1 pm ☀ 20°
+        </Li>
+        <Li>
+         3 pm ☀ 22° 
+        </Li>
+        <Li>
+         5 pm ☀ 25°
+        </Li>
+       </ul>
+      </div>
+      </div>
+     </div>
+
+     </div>
+     </Main>
+
+      </div>
+     </div>
+     </div>
+   
+    
+		 <div class="col-6" id="rightCard">
+      <div class="card">
+      <div class="card-body">
+        <ul id="forecasting">
+         <li>
+          05/10 Monday
+          <br> <span> ☀ 25°/15°
+          </span>
+         </li>
+         <li>
+          06/10 Tuesday
+          <br><span> ⛅22°/14°</span>
+         </li>
+         <li>
+          07/10 Wednesday
+          <br> <span> ⛅ 18°/12°</span>
+         </li>
+         <li>
+          08/10 Thursday
+          <br> <span>🌦 17°/12°</span>
+         </li>
+         <li>
+          09/10 Friday
+          <br> <span>🌦 15°/10°</span>
+         </li>
+        </ul>
+      </div>
+      </div>
+     </div>
+    </div>
+      
+   </div>
+   </div>
+  </div>
+
+  <script src=src/homework4.js> </script>
+
+ </body>
+</html>
