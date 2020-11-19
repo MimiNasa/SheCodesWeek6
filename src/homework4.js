@@ -40,11 +40,6 @@ function searching (event){
    }
 
 
-
-
-
-
-
  axios.get(info2).then(showPlace);
 
 
