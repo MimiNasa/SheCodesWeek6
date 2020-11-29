@@ -70,7 +70,7 @@
        </div>
         
 				<div class="col-6" id="estatus">
-					<h2>
+					<h2 id="status">
 					Partly cloudly
 					</h2>
         </div>  
@@ -78,19 +78,22 @@
 
       <div class="row" id="currentStatus">
         <div class="col-6" id="city">
-         <h1 id="emojihoy">
-          ⛅ 
-         <small> <a href="" id="celcius">°C</a> / <a href="" id="fAH">°F</a></small>
-         </h1>
+       <p>
+        <span id="emojihoy"> ⛅ </span>
+         <span> <a href="" id="celcius">°C</a> / <a href="" id="fAH">°F</a></span> <br>
+         <span id="moreInfo"> Humidity: <br> Wind speed:</span>
+      </p>
         </div>
 
         <div class="col-6" id="weather">
-          <p id="dateNow"> 
-           04/10 
+          <p > 
+           <span id="dateNow"> 
+            24/10
+            <br>
+            sunday
+           </span>
            <br> 
-           sunday 
-           <br> 
-           24°/18°
+           <span id="max_min"> 24°/18° </span>
           </p>
         </div>
       </div>
@@ -104,22 +107,22 @@
         <div class="card">
         <div class="card-body">
          <ul id="hours-weather">
-          <li>
+          <li id="now">
           Now   🌤  21°
           </li>
-          <li>
+          <li id="2h">
           9 pm  🌤  18° 
           </li>
-          <li>
+          <li id="4h">
           11 pm 🌙  18°
           </li>
-          <li>
+          <li id="6h">
           1 am  🌙  15° 
           </li>
-          <li>
+          <li id="8h">
           3 am  🌙  15° 
           </li>
-          <li>
+          <li id="10h">
           5 am  ☁  15° 
          </li>
         </ul>
