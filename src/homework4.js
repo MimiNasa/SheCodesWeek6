@@ -1,7 +1,10 @@
  
  //get the current time and date//
  
- function giveTime(now){
+ function giveTime(timestamp){
+
+  let now= new Date(timestamp);
+  
 
   let days=["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ];
   let today=days[now.getDay()];
@@ -15,14 +18,8 @@
     minutes=`0${minutes}`;
  }
   return `${now.getDate()}/${now.getMonth()+1} <br> ${today} ${hours}:${minutes}`;
+   
   }
-
- let now= new Date();
- let day =document.querySelector("#dateNow");
- day.innerHTML=giveTime(now);
-console.log (now);
-
-
 
 //look for ciy weather //
 
@@ -32,10 +29,17 @@ function searching (event){
 
   let apiKey = "c56134558ca84ab1e7072449202b8614";
   let apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=";
+
+  //api for hourly forecast//
+  let apiUrlFor = "https://api.openweathermap.org/data/2.5/forecast?q=";
   let nowCity=document.querySelector("#citySearch");
 
  let info2 = `${apiUrl}${nowCity.value}&units=metric&appid=${apiKey}`;
  console.log(info2);
+  
+ //api for hourly forecast//
+ let infoForcast = `${apiUrlFor}${nowCity.value}&units=metric&appid=${apiKey}`;
+ console.log(infoForcast);
 
 
  // information of weather searched//
@@ -56,7 +60,10 @@ function searching (event){
    status.innerHTML=`${infoWeather}`;
 
   let moreInfo= document.querySelector("#moreInfo");
-  moreInfo.innerHTML=` Humidity: ${(response.data.main.humidity)} <br> Wind speed: ${response.data.wind.speed}`;
+  moreInfo.innerHTML=` Humidity: ${(response.data.main.humidity)}% <br> Wind speed: ${response.data.wind.speed} km/h`;
+
+  let day =document.querySelector("#dateNow");
+  day.innerHTML=giveTime(response.data.dt*1000);
 
     let emoji=document.querySelector("#emojihoy");
 
@@ -108,7 +115,7 @@ let info2 = `${apiUrl}${nowCity.value}&units=imperial&appid=${apiKey}`;
   rangeTemp.innerHTML=`${Math.round(response.data.main.temp_min)}°/${Math.round(response.data.main.temp_max)}°`;
 
 let moreInfo= document.querySelector("#moreInfo");
-  moreInfo.innerHTML=` Humidity: ${(response.data.main.humidity)} <br> Wind speed: ${response.data.wind.speed}`;
+  moreInfo.innerHTML=` Humidity: ${(response.data.main.humidity)}% <br> Wind speed: ${response.data.wind.speed} mph`;
 
   }
 
@@ -157,7 +164,7 @@ function getLoc(event){
        status.innerHTML=`${infoWeather}`;
 
         let moreInfo= document.querySelector("#moreInfo");
-        moreInfo.innerHTML=` Humidity: ${(response.data.main.humidity)} <br> Wind speed: ${response.data.wind.speed}`;
+        moreInfo.innerHTML=` Humidity: ${(response.data.main.humidity)}% <br> Wind speed: ${response.data.wind.speed} km/h`;
 
         let emoji=document.querySelector("#emojihoy");
 
