@@ -21,6 +21,7 @@
    
   }
 
+
 //look for ciy weather //
 
 
@@ -29,15 +30,14 @@ function searching (event){
 
   let apiKey = "c56134558ca84ab1e7072449202b8614";
   let apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=";
+  let nowCity=document.querySelector("#citySearch");
+
+  let info2 = `${apiUrl}${nowCity.value}&units=metric&appid=${apiKey}`;
+ console.log(info2);
 
   //api for hourly forecast//
   let apiUrlFor = "https://api.openweathermap.org/data/2.5/forecast?q=";
-  let nowCity=document.querySelector("#citySearch");
 
- let info2 = `${apiUrl}${nowCity.value}&units=metric&appid=${apiKey}`;
- console.log(info2);
-  
- //api for hourly forecast//
  let infoForcast = `${apiUrlFor}${nowCity.value}&units=metric&appid=${apiKey}`;
  console.log(infoForcast);
 
@@ -53,7 +53,8 @@ function searching (event){
    clima.innerHTML=`${Math.round(response.data.main.temp)}°`;
 
    let rangeTemp=document.querySelector("#max_min");
-   rangeTemp.innerHTML=`${Math.round(response.data.main.temp_min)}°/${Math.round(response.data.main.temp_max)}°`;
+   rangeTemp.innerHTML=`${Math.round(response.data.main.temp_min)}°/${Math.round(response.data.main.temp_max)}°
+   <br ><small> Feels like: ${Math.round(response.data.main.feels_like)}°`;
 
    let infoWeather= response.data.weather[0].main;
    let status=document.querySelector("#status");
@@ -65,33 +66,22 @@ function searching (event){
   let day =document.querySelector("#dateNow");
   day.innerHTML=giveTime(response.data.dt*1000);
 
+
     let emoji=document.querySelector("#emojihoy");
+     emoji.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+     console.log(`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);   
 
-      if (infoWeather==="Clouds") {
-       emoji.innerHTML=`☁`;} 
-         else {
-
-      if (infoWeather==="Clear") {
-         emoji.innerHTML=` ☀`;
-
-          } else {
-
-         if (infoWeather==="Rain"){
-        emoji.innerHTML=`🌦`;
-         
-         } else{
-
-         emoji.innerHTML=`⛅`
-         }
         }
-      }
-  }
+      
  axios.get(info2).then(showPlace);
 
 }
 
 let currCity=document.querySelector("#lookforcity");
 currCity.addEventListener("submit",searching);
+
+
+
 
 
 
@@ -112,7 +102,8 @@ let info2 = `${apiUrl}${nowCity.value}&units=imperial&appid=${apiKey}`;
   tempElement.innerHTML=`${Math.round(response.data.main.temp)}°`;
 
   let rangeTemp=document.querySelector("#max_min");
-  rangeTemp.innerHTML=`${Math.round(response.data.main.temp_min)}°/${Math.round(response.data.main.temp_max)}°`;
+  rangeTemp.innerHTML=`${Math.round(response.data.main.temp_min)}°/${Math.round(response.data.main.temp_max)}° 
+  <br ><small> Feels like: ${Math.round(response.data.main.feels_like)}°`;
 
 let moreInfo= document.querySelector("#moreInfo");
   moreInfo.innerHTML=` Humidity: ${(response.data.main.humidity)}% <br> Wind speed: ${response.data.wind.speed} mph`;
@@ -157,7 +148,8 @@ function getLoc(event){
         clima.innerHTML=`${Math.round(response.data.main.temp)}°`;
 
         let rangeTemp=document.querySelector("#max_min");
-        rangeTemp.innerHTML=`${Math.round(response.data.main.temp_min)}°/${Math.round(response.data.main.temp_max)}°`;
+        rangeTemp.innerHTML=`${Math.round(response.data.main.temp_min)}°/${Math.round(response.data.main.temp_max)}°
+           <br ><small> Feels like: ${Math.round(response.data.main.feels_like)}°`;
 
         let infoWeather= response.data.weather[0].main;
         let status=document.querySelector("#status");
@@ -167,26 +159,11 @@ function getLoc(event){
         moreInfo.innerHTML=` Humidity: ${(response.data.main.humidity)}% <br> Wind speed: ${response.data.wind.speed} km/h`;
 
         let emoji=document.querySelector("#emojihoy");
+       emoji.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+       console.log(`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
-         if (infoWeather==="Clouds") {
-         emoji.innerHTML=`☁`;} 
-         else {
 
-         if (infoWeather==="Clear") {
-         emoji.innerHTML=` ☀`;
-
-          } else {
-
-          if (infoWeather==="Rain"){
-         emoji.innerHTML=`🌦`;
-         
-         } else{
-
-          emoji.innerHTML=`⛅`
-              }
           }
-         }
-       }
        
     axios.get(info).then(showTemperature);
   }
